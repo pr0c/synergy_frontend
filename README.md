@@ -1,25 +1,11 @@
-# synergy_frontend
+#Front-end
+1. Download and run back-end part of project [https://github.com/pr0c/synergy-test](https://github.com/pr0c/synergy-test)
+2. Open src/main.js file and change address of API (http or https prefix is required by CORS policy)
+```javascript
+Vue.prototype.$actions = 'your address';
+```
+3. Open project folder in terminal and run it by command
+`yarn serve`
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# synergy_frontend
+For production before running project run command
+`yarn build`
