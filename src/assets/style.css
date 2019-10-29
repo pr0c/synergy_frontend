@@ -7,3 +7,25 @@
 body {
 	margin: 1.6px;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    background: #F0F3F4;
+    width: 0.5em;
+    position: absolute;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    position: absolute;
+    z-index: -2;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #888;
+}
+
+body ::-webkit-scrollbar {
+    height: 5px !important;
+}

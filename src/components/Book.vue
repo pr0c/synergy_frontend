@@ -1,11 +1,11 @@
 <template>
 	<div class="book">
 		<div class="title">
-				<span>{{ book.title }}</span>
+				<span v-on:click="openBook">{{ book.title }}</span>
 		</div>
 		<div class="book-info">
 			<div class="photo">
-					<img src="../assets/book.jpg">
+					<img :src="this.$actions + '/images/' + book.picture">
 			</div>
 			<div class="description">
 					<div>{{ book.description }}</div>
@@ -15,7 +15,8 @@
 </template>
 
 <script>
-	import axios from 'axios';
+	import axios from 'axios'
+	import router from '../router'
 
 	export default {
 		data() {
@@ -31,6 +32,11 @@
 			}
 		},
 		name: 'Book',
+		methods: {
+			openBook: function() {
+				router.push({ name: 'book', params: { id: this.book.id } });
+			}
+		},
 		mounted() {
 			if(this.$route.params.id) {
 				this.id = this.$route.params.id;

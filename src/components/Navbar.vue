@@ -2,9 +2,6 @@
 	<div class="navbar">
 		<div class="nav-panel">
 			<div class="nav-item">
-				<span><router-link to="/">Home</router-link></span>
-			</div>
-			<div class="nav-item">
 				<span><router-link to="/books">Books</router-link></span>
 			</div>
 			<div class="nav-item">
@@ -16,7 +13,7 @@
 
 <script>
 	export default {
-    name: 'Navbar'
+    	name: 'Navbar'
 	}
 </script>
 
@@ -52,5 +49,9 @@
 
 	.navbar .nav-item a:hover {
 		color: #333;
+	}
+
+	.router-link-active {
+		color: #333 !important;
 	}
 </style>

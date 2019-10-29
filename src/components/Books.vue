@@ -1,6 +1,9 @@
 <template>
-	<div class="books">
-		<Book v-for="(bookData, id) in books" :bookInfo="bookData" :key="'book_'+id"/>
+	<div>
+		<div class="add-book-link"><router-link to="/book">[ Add book ]</router-link></div>
+		<div class="books">
+			<Book v-for="(bookData, id) in books" :bookInfo="bookData" :key="'book_'+id"/>
+		</div>
 	</div>
 </template>
 
@@ -19,7 +22,7 @@
 		},
 		name: 'Books',
 		mounted() {
-			axios.get('http://localhost:8000/book')
+			axios.get(this.$actions + '/book')
 				.then((response) => {
 					this.books = response['data'];
 				});
@@ -36,5 +39,18 @@
 
 	.book {
 		margin-top: 15px;
+	}
+
+	.add-book-link {
+		margin: 15px;
+	}
+
+	.add-book-link a {
+		text-decoration: none;
+		color: #777;
+	}
+
+	.add-book-link a:hover {
+		color: #333;
 	}
 </style>
